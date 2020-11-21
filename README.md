@@ -10,7 +10,7 @@
   git clone https://github.com/facebookresearch/frankmocap
   ```
 2. Install the [FrankMocap](https://github.com/facebookresearch/frankmocap) as the official document says
-* When training, you may face error related to "opendr" installation
+* When installing, you may face error related to "opendr" installation
 - If ERRROR MSG goes like
   * Collect2: error: ld returned 1 exit status // Error: command ‘gcc’ failed with exit status 1
   * TRY below line : [source](https://github.com/openai/mujoco-py/issues/284)
