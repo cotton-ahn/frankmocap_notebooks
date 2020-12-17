@@ -1,0 +1,1 @@
+{"image_path": "/home/hyem/workspace/frankmocap_notebooks/images/IODxDxX7oi/scene_00005026.jpg", "body_bbox_list": [[160, 500, 316, 148], [608, 516, 500, 37]], "hand_bbox_list": [{"left_hand": [231.1900177001953, 468.5686340332031, 204.95997619628906, 169.37271118164062], "right_hand": null}, {"left_hand": null, "right_hand": null}]}
