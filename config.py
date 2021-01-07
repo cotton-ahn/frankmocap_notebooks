@@ -1,12 +1,10 @@
 import os
 
 # change this value as you want. Set this as -1 to process with original fps.
-fps = -1
+fps = 10
 vid_height = 640
 
-front_rear_cut = 500
-
-read_type = 'videos'# 'videos' or 'images'
+read_type = 'images'# 'videos' or 'images'
 
 # Some Path Information
 url_filePath = 'video_url.txt'
