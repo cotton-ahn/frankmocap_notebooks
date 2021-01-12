@@ -28,7 +28,7 @@
   ```
   cd $(THIS REPOSITORY)
   cp ./copy_and_paste.py ./frankmocap/integration
-  cp ./demo_frankmocap ./frankmocap/demo
+  cp ./demo_frankmocap.py ./frankmocap/demo
   ```
   
 5. Prepare the jupyter notebook, and add the venv_frankmocap to the ipykernel
