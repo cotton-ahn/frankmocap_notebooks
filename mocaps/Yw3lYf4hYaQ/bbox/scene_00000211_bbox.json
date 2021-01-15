@@ -1,0 +1,1 @@
+{"image_path": "/daintlab/home/rilab/github/frankmocap_notebooks/images/Yw3lYf4hYaQ/scene_00000211.jpg", "body_bbox_list": [[730, 84, 155, 478], [203, 151, 104, 429]], "hand_bbox_list": [{"left_hand": [870.0841064453125, 65.58808898925781, 30.5902099609375, 39.49919128417969], "right_hand": null}, {"left_hand": null, "right_hand": null}]}
