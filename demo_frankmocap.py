@@ -29,7 +29,10 @@ from renderer.viewer2D import ImShow
 
 def __filter_bbox_list(body_bbox_list, hand_bbox_list, single_person):
     # (to make the order as consistent as possible without tracking)
-    bbox_size =  [ (x[2] * x[3]) for x in body_bbox_list]
+    
+    # sorting_values =  [ (x[2] * x[3]) for x in body_bbox_list] # based on size
+    sorting_values = [ (x[0]) for x in body_bbox_list] # based on x-position (rightmost)
+    
     idx_big2small = np.argsort(bbox_size)[::-1]
     body_bbox_list = [ body_bbox_list[i] for i in idx_big2small ]
     hand_bbox_list = [hand_bbox_list[i] for i in idx_big2small]
