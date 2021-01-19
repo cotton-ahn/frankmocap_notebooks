@@ -13,6 +13,7 @@ image_dir = 'images'
 mocap_dir = 'mocaps'
 skeleton_pkl_dir = 'skeletons_pkl'
 skeleton_npz_dir = 'skeletons_npz'
+skeleton_json_dir = 'skeletons_json'
 
 repo_abs_path = os.path.abspath('.')
 
