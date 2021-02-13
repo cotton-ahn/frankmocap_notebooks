@@ -63,7 +63,7 @@ def plot_2D(body, body_dict,
     
     
 def plot_vector(pos, vec, ax, length=50):
-    ax.plot([pos[0], pos[0]+length*vec[0]], [pos[1], pos[1]+length*vec[1]], linewidth=5)
+    ax.plot([pos[0], pos[0]+length*vec[0]], [pos[1], pos[1]+length*vec[1]], linewidth=4)
     
 
 def get_head_info(open_pose):
@@ -79,20 +79,28 @@ def plot_head_info(head_info, ax):
     plot_vector(head_info['pos'], head_info['vec'], ax)
 
 
-def get_hand_info(hand):
+def get_hand_info(hand, direction):
     hand_info = dict()
     
     index_vector = hand[9] - hand[0]
     index_vector /= np.linalg.norm(index_vector)
 
-    thumb_vector = hand[17] - hand[0]
-    thumb_vector /= np.linalg.norm(thumb_vector)
+    pinky_vector = hand[17] - hand[0]
+    pinky_vector /= np.linalg.norm(pinky_vector)
 
-    palm_vector = np.cross(index_vector, thumb_vector)
-    palm_vector /= np.linalg.norm(palm_vector)
+    if direction=='left':    
+        palm_vector = np.cross(pinky_vector, index_vector)
+        palm_vector /= np.linalg.norm(palm_vector)
 
-    new_thumb_vector = np.cross(index_vector, palm_vector)
-    new_thumb_vector /= np.linalg.norm(new_thumb_vector)
+        new_thumb_vector = np.cross(palm_vector, index_vector)
+        new_thumb_vector /= np.linalg.norm(new_thumb_vector)
+        
+    elif direction=='right':
+        palm_vector = np.cross(index_vector, pinky_vector)
+        palm_vector /= np.linalg.norm(palm_vector)
+
+        new_thumb_vector = np.cross(index_vector, palm_vector)
+        new_thumb_vector /= np.linalg.norm(new_thumb_vector)
     
     hand_info['thumb'] = new_thumb_vector
     hand_info['index'] = index_vector
@@ -105,8 +113,6 @@ def get_hand_info(hand):
     return hand_info, info_array
 
 def plot_hand_info(hand_info, ax):
-    plot_vector(hand_info['pos'], hand_info['thumb'], ax)
-    plot_vector(hand_info['pos'], hand_info['index'], ax)
     plot_vector(hand_info['pos'], hand_info['palm'], ax)
 
     
