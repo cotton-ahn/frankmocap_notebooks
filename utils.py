@@ -78,7 +78,7 @@ def get_head_info(open_pose):
 def plot_head_info(head_info, ax):
     plot_vector(head_info['pos'], head_info['vec'], ax)
 
-
+"""
 def get_hand_info(hand):
     hand_info = dict()
     
@@ -102,6 +102,30 @@ def get_hand_info(hand):
     info_array = [new_thumb_vector, index_vector, palm_vector, hand[0]]
     info_array = np.concatenate(info_array)
     
+    return hand_info, info_array
+"""
+def get_hand_info(hand, direction):
+    hand_info = dict()
+    index_vector = hand[9] - hand[0]
+    index_vector /= np.linalg.norm(index_vector)
+    pinky_vector = hand[17] - hand[0]
+    pinky_vector /= np.linalg.norm(pinky_vector)
+    if direction=='left':    
+        palm_vector = np.cross(pinky_vector, index_vector)
+        palm_vector /= np.linalg.norm(palm_vector)
+        new_thumb_vector = np.cross(palm_vector, index_vector)
+        new_thumb_vector /= np.linalg.norm(new_thumb_vector)
+    elif direction=='right':
+        palm_vector = np.cross(index_vector, pinky_vector)
+        palm_vector /= np.linalg.norm(palm_vector)
+        new_thumb_vector = np.cross(index_vector, palm_vector)
+        new_thumb_vector /= np.linalg.norm(new_thumb_vector)
+    hand_info['thumb'] = new_thumb_vector
+    hand_info['index'] = index_vector
+    hand_info['palm'] = palm_vector
+    hand_info['pos'] = hand[0]
+    info_array = [new_thumb_vector, index_vector, palm_vector, hand[0]]
+    info_array = np.concatenate(info_array)
     return hand_info, info_array
 
 def plot_hand_info(hand_info, ax):
