@@ -1,1 +1,1 @@
-{"image_path": "/daintlab/home/rilab/github/frankmocap_notebooks/images/LXO-jKksQkM/scene_00000007.jpg", "body_bbox_list": [[665, 272, 126, 292]], "hand_bbox_list": [{"left_hand": null, "right_hand": [787.6686401367188, 376.1822204589844, 22.284912109375, 20.837127685546875]}]}
+{"image_path": "/daintlab/home/rilab/github/frankmocap_notebooks/images/LXO-jKksQkM/scene_00000007.jpg", "body_bbox_list": [[849, 289, 23, 133], [811, 283, 89, 275]], "hand_bbox_list": []}
