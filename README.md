@@ -1,5 +1,6 @@
 # frankmocap_notebooks
 - This repository is to use the [FrankMocap](https://github.com/facebookresearch/frankmocap) easier.. (MAYBE)
+- Disclaimer: This repo. would be outdated since FrankMocap is updated and we forgot the fork the previous version. Please visit "youtube_frankmocap" instead.
 
 # Preparation
 0. Prepare Ubuntu 18.04+ and Anaconda
